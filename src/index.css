@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 body {
   margin: 0;
-  font-family: 'Mukta', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   padding: 0;
   box-sizing: border-box;
   background: rgb(192 192 195)
@@ -25,7 +25,6 @@ body {
 .InterestType{
   text-align: center;
     margin-bottom: 41px;
-    
 }
 .Graph{
   width: 574px;
@@ -36,6 +35,19 @@ body {
   border-radius: 10px;
   background: #dddede;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.Results{
+  margin-bottom: 40px;
+}
+.InterestResult{
+    margin: 0;
+    margin-top: -21px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-bottom: 0.5px solid #a49a9a;
+    width: 250px;
+    padding-bottom: 6px;
 }
 #interest{
   padding: 9px;
@@ -63,8 +75,10 @@ body {
 #duration{
   background: #dddede;
   padding: 7px;
-  border-radius: 10px;
+  border-radius: 0;
   outline: none;
+  border: none;
+  border-bottom: 1px solid;
 }
 .Input{
   border: none;

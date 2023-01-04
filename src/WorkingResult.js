@@ -2,10 +2,10 @@ import Result from "./Result";
 import { React, useState } from "react";
 
 const MyContext = (props) => {
-    const [results, setResults] = useState([]);
+    const [si, setSi] = useState("");
 
     return (
-        <Result.Provider value={{ results, setResults }}>
+        <Result.Provider value={{ si, setSi }}>
             {props.children}
         </Result.Provider>
     )

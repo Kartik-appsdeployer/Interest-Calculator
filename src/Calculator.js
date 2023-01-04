@@ -21,24 +21,29 @@ const initialState = {
 const Calculator = () => {
     const [interests, setInterests] = useState(initialState);
     const [finalData, setFinalData] = useState([]);
+    const {si, setSi} = useContext(Result);
     const handleSubmit = (e) => {
         e.preventDefault();
         if (document.getElementById("interest").value === 'Simple Interest') {
             if (document.getElementById("duration").value === 'Year') {
                 let results = (interests.prin * interests.rat * interests.tim) / 100;
+                setSi(results);
                 setFinalData(finalData => [...finalData, results]);
             }
             else if (document.getElementById("duration").value === 'Month') {
                 let results = (interests.prin * interests.rat * interests.tim) / 1200;
+                setSi(results);
                 setFinalData(finalData => [...finalData, results]);
             }
             else {
                 let results = (interests.prin * interests.rat * interests.tim) / 36500;
+                setSi(results);
                 setFinalData(finalData => [...finalData, results]);
             }
         }
         else {
             let results = interests.prin * (Math.pow(1 + interests.rat/100, interests.tim));
+            setSi(results);
             setFinalData(finalData => [...finalData, results]);
             console.log(results);
         }
@@ -62,7 +67,7 @@ const Calculator = () => {
         labels,
         datasets: [
           {
-            label: document.getElementById('interest').value,
+            label: 'Interest',
             data: finalData.slice(0, 7),
             backgroundColor: 'black',
             color: 'black'
@@ -109,6 +114,10 @@ const Calculator = () => {
                 <div className="Button">
                     <button onClick={handleSubmit} className="calculatebtn">Calculate</button>
                 </div>
+
+                <hr />
+                <h1 className='Results'>Your Results:</h1><br />
+                <p className='InterestResult'>Interest:{si}</p>
             </div>
 
             <div className="Graph">
